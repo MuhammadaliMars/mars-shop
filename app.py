@@ -10,7 +10,7 @@ env.read_env()
 BOT_TOKEN = env.str("TOKEN")
 
 storage = MemoryStorage()
-bot = Bot(token=BOT_TOKEN, proxy="htt://proxy.server:3128")
+bot = Bot(token=BOT_TOKEN, proxy="http://proxy.server:3128")
 dp = Dispatcher(bot=bot, storage=storage)
 
 
