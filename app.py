@@ -2,11 +2,15 @@ from aiogram import Dispatcher, Bot, types, executor
 from default_keyboards import user_main_menu
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
+from environs import Env
 
-token = "6496322618:AAHZ-UFHi4VnUfKNiie05edNvtS_s9Lr83o"
+env= Env()
+env.read_env()
+
+BOT_TOKEN = env.str("TOKEN")
 
 storage = MemoryStorage()
-bot = Bot(token=token)
+bot = Bot(token=BOT_TOKEN, proxy="htt://proxy.server:3128")
 dp = Dispatcher(bot=bot, storage=storage)
 
 
